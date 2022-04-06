@@ -1,380 +1,649 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.1">
 
-  
-  <title>OwenOwl</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenowl.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
 <meta property="og:title" content="OwenOwl">
 <meta property="og:url" content="https://owenowl.github.io/index.html">
 <meta property="og:site_name" content="OwenOwl">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="OwenOwl">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="OwenOwl" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.4.1"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">OwenOwl</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://owenowl.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-thujx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/thujx/" class="article-date">
-  <time datetime="2018-09-28T12:08:00.000Z" itemprop="datePublished">2018-09-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/thujx/">清华集训 2017 题解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="day-1-a.-生成树计数">Day 1 A. 生成树计数</h3>
-<p>考虑这棵树的 <span class="math inline">\(\mathrm{prufer}\)</span> 序列，设 <span class="math inline">\(d_i\)</span> 表示 <span class="math inline">\(i\)</span> 在 <span class="math inline">\(\mathrm{prufer}\)</span> 序列中出现的次数，则有 <span class="math inline">\(\sum d_i = n - 2\)</span>。</p>
-<p>考虑一个序列 <span class="math inline">\(d\)</span> 的贡献，是</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-&amp;&amp;\frac{(n-2)!}{\prod d_i!}\prod(d_i+1)^ma_i^{d_i+1}\sum (d_i+1)^m\\
-&amp;=&amp;(n-2)!\prod a_i \sum_j \frac{1}{\prod d_i!} \prod a_i^{d_i}\prod_{i\ne j}(d_i+1)^m (d_j+1)^{2m}
-\end{eqnarray}
-\]</span></p>
-<p>设后面这个 <span class="math inline">\(\sum\)</span> 关于 <span class="math inline">\(\sum d_i\)</span> 的生成函数是 <span class="math inline">\(F(x)\)</span>。再设</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-A(x)&amp;=&amp;\sum_{k} \frac{1}{k!} (k+1)^m x^k\\
-B(x)&amp;=&amp;\sum_{k} \frac{1}{k!} (k+1)^{2m} x^k\\
-\end{eqnarray}
-\]</span></p>
-<p>考虑枚举 <span class="math inline">\((d_i+1)^{2m}\)</span> 是哪一项被算的，则有</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-F(x)&amp;=&amp;\sum_i B(a_ix) \prod_{j\ne i} A(a_j x)\\
-&amp;=&amp;\sum_i \frac{B(a_i x)}{A(a_i x)} \prod_i A(a_ix)\\
-&amp;=&amp;\sum_i \frac{B(a_i x)}{A(a_i x)} \cdot \exp {\sum_i \ln A(a_ix)}\\
-\end{eqnarray}
-\]</span></p>
-<p>求出 <span class="math inline">\(\frac{B(x)}{A(x)}\)</span> 和 <span class="math inline">\(\ln A(x)\)</span> 后，需要代入 <span class="math inline">\(a_ix\)</span> 并求和，于是还要对 $k $ 和 <span class="math inline">\([l_2,r_2](l_1&lt;l_2)\)</span>，如果前者包含后者，则后者的端点方向不同造成 <span class="math inline">\(1\)</span> 的代价；如果交叉，则 <span class="math inline">\(r_1\)</span> 和 <span class="math inline">\(l_2\)</span> 的方向相同造成 <span class="math inline">\(1\)</span> 的代价。直接枚举是 <span class="math inline">\(2^n\)</span> 的。</p>
-<p>考虑按左端点排序以后，如果知道了前 <span class="math inline">\(i\)</span> 条线段的右端点方向，那么可以直接贪心出 <span class="math inline">\(i\)</span> 的左端点方向，因此是 <span class="math inline">\(2^{\frac{n}{2}}\)</span> 的，加上最优解剪枝即可过。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/BpVrvCWgH7/</span><br></pre></td></tr></table></figure>
-<h3 id="day-2-b.-小-y-和二叉树">Day 2 B. 小 Y 和二叉树</h3>
-<p>先求出所有子树/子树外的最小的序列开头。</p>
-<p>首先编号最小的度数 <span class="math inline">\(\le 2\)</span> 的点一定是序列开头，在树的最左下方。</p>
-<p>如果固定了某个点作为当前子问题的序列开头，可以贪心右儿子和右父亲的放法，递归求解。如果固定了某个点作为当前子问题的根，可以贪心左右儿子的放法，递归求解。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/wH4cJrTDqM/</span><br></pre></td></tr></table></figure>
-<h3 id="day-2-c.-小-y-和恐怖的奴隶主">Day 2 C. 小 Y 和恐怖的奴隶主</h3>
-<p>搜一下发现状态最多 <span class="math inline">\(165\)</span> 个，加上记答案一共 <span class="math inline">\(166\)</span> 维，先预处理出 <span class="math inline">\(2\)</span> 的次幂的答案，然后询问的时候用向量乘矩阵，复杂度就是 <span class="math inline">\(S^3\log n + T S^2 \log n\)</span>（<span class="math inline">\(S\)</span> 是维数）。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/26SDwXckck/</span><br></pre></td></tr></table></figure>
-<h3 id="day-3-a.-简单数据结构">Day 3 A. 简单数据结构</h3>
-<p>这个题由于限制了每个数的插入次数最多为 <span class="math inline">\(10\)</span>，所以总复杂度很稳。</p>
-<p>给每一个数开一个桶记录一下后面长为 <span class="math inline">\(d\)</span> 的答案数量，每次后端插删的时候更新约数，然后更新约数的约数。前端插删的时候枚举倍数暴力求一下这个数的答案就行了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/CXXfVKw5JX/</span><br></pre></td></tr></table></figure>
-<h3 id="day-3-b.-福若格斯">Day 3 B. 福若格斯</h3>
-<p>首先手推一下每个数的 surreal number。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*:    LL_RR LRL_R L_RLR</span><br><span class="line">up:   L_LRR</span><br><span class="line">down: LLR_R</span><br><span class="line">-1:   _RLLR _RLRL R_RLL</span><br><span class="line">+1:   LRRL_ RLRL_ RRL_L</span><br><span class="line">-1/2: LR_RL</span><br><span class="line">+1/2: RL_LR</span><br><span class="line">0:    Rest All</span><br></pre></td></tr></table></figure>
-<p>这里规定 <span class="math inline">\(\{0|0\}=*\)</span> 表示先手胜，<span class="math inline">\(\{0|*\}=\uparrow\)</span>，<span class="math inline">\(\{*|0\}=\downarrow\)</span></p>
-<p>然后一共有 <span class="math inline">\(0,\pm1,\pm \frac{1}{2},*,\uparrow,\downarrow\)</span> 一共 <span class="math inline">\(8\)</span> 种状态，其中前 <span class="math inline">\(5\)</span> 种可以求和，组合数算一下 <span class="math inline">\(&gt;0,=0,&lt;0\)</span> 的方案数分别有多少。</p>
-<p>然后 <span class="math inline">\(\sum =0\)</span> 的状态会受到 <span class="math inline">\(*\)</span> 的奇偶性和 <span class="math inline">\(\uparrow,\downarrow\)</span> 哪个比较多影响。需要注意的是 <span class="math inline">\(*\)</span> 产生影响的话 <span class="math inline">\(\uparrow,\downarrow\)</span> 的个数差需要 <span class="math inline">\(&gt;1\)</span> 才会造成对应的影响。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/bgxYJ6fgf5/</span><br></pre></td></tr></table></figure>
-<h3 id="day-3-c.-避难所">Day 3 C. 避难所</h3>
-<p>可以发现样例的构造方法是 <span class="math inline">\(\{2\times 3,2\times 3,2\times 3\} \Rightarrow \{3,3,3,2\times 2\times 2\}\)</span>。</p>
-<p>于是可以构造最优解是 <span class="math inline">\(\{x\times y,x\times y,x\times y\}\)</span>，而贪心解是 <span class="math inline">\(\{x,x,x,y\times y\times y\}\)</span> 的东西。<span class="math inline">\(n\)</span> 足够大的时候大致取 <span class="math inline">\(y &lt; n^{1/3},x&gt;n^{1/2}\)</span> 即可。</p>
-<p><span class="math inline">\(n\)</span> 小的话就暴力一下形如 <span class="math inline">\(\{a,b,b\}\)</span> 的答案是否可行即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/YMKMxH4TYP/</span><br></pre></td></tr></table></figure>
-<h3 id="day-4-a.-我的生命已如风中残烛">Day 4 A. 我的生命已如风中残烛</h3>
-<p>首先考虑暴力，每次暴力找后继绕过去，如果绕的时候出现了绕着一个凸包转多圈的情况，相当于可以直接模掉这个凸包的长度。所以每次找循环节，线转一圈长度至少减半。</p>
-<p>优化找后继，可以以每个点为中心预处理出极角序，再预处理从某个点过来的时候的第一个可行位置，转的时候拿个指针扫下去就行了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/cbkGYxQw4Z/</span><br></pre></td></tr></table></figure>
-<h3 id="day-4-b.-榕树之心">Day 4 B. 榕树之心</h3>
-<p>DP 出一个子树内部互相消，可以消成至少几个点。那么就是把儿子中大小最大的挑出来，看其它儿子能不能把这个消没有。特判一下奇偶。</p>
-<p>对 <span class="math inline">\(i\)</span> 的答案可以把 <span class="math inline">\(1\to i\)</span> 的路径缩成一个点求一下 DP 值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/S6rMpnPhTt/</span><br></pre></td></tr></table></figure>
-<h3 id="day-4-c.-某位歌姬的故事">Day 4 C. 某位歌姬的故事</h3>
-<p>首先离散化，求出每一段的最大值，判一下不合法。</p>
-<p>然后对于同一个最大值，把这个最大值的区间全部抠出来，再把是这个最大值的限制全部抠出来，做一个 DP 就行了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://paste.ubuntu.com/p/dWTw4NmFFk/</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://owenowl.github.io/thujx/" data-id="cl1neuwpn0002qki6c24mdi9x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-BZOJ3864" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/BZOJ3864/" class="article-date">
-  <time datetime="2018-09-20T07:53:00.000Z" itemprop="datePublished">2018-09-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/BZOJ3864/">BZOJ3864 题解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span class="math inline">\(n\)</span> 个叶子，每个非叶节点儿子数 <span class="math inline">\(\in D\)</span> 的有根树个数（儿子有序）。</p>
-<h3 id="解答">解答</h3>
-<p>答案的母函数： <span class="math display">\[
-F(x) = 1+\sum_{d\in D} F^d(x)
-\]</span> 那么 <span class="math display">\[
-F(x)-\sum_{d\in D}F^d(x) = 1
-\]</span> 设 <span class="math display">\[
-A(x) = x-\sum_{d\in D}x^d
-\]</span> 则有 <span class="math display">\[
-A(F(x)) = 1
-\]</span> 拉格朗日反演得到 <span class="math display">\[
-\begin{eqnarray}
-[x^n]F(x) &amp;=&amp; \frac{1}{n}[x^{-1}]\frac{1}{A^n(x)}\\
-&amp;=&amp; \frac{1}{n}[x^{n-1}]\left(\frac{x}{A(x)}\right)^n
-\end{eqnarray}
-\]</span></p>
-<p>其中 <span class="math inline">\(A(x)​\)</span> 约掉上面的 <span class="math inline">\(x​\)</span> 之后常数项为 <span class="math inline">\(1​\)</span>，可以直接 <span class="math inline">\(ln​\)</span> + <span class="math inline">\(exp​\)</span>。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://owenowl.github.io/BZOJ3864/" data-id="cl1neuwpi0000qki6g2ipfamg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+<link rel="canonical" href="https://owenowl.github.io/">
 
 
-  
-    <article id="post-poly2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/poly2/" class="article-date">
-  <time datetime="2018-08-30T15:18:00.000Z" itemprop="datePublished">2018-08-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/poly2/">多项式题目“啖光之花”题解</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>已知 <span class="math inline">\(h_k = \sum_{i=0}^{n-1} a_ib_i^k \;(0\le k&lt;n)\)</span></p>
-<p>现给出 <span class="math inline">\(n\)</span>，<span class="math inline">\(h_0,h_1,\ldots,h_{n-1}\)</span>，<span class="math inline">\(b_0,b_1,\ldots,b_{n-1}\)</span></p>
-<p>求 <span class="math inline">\(a_0,a_1,\ldots,a_{n-1}\)</span></p>
-<h3 id="解法1">解法1</h3>
-<p>设 <span class="math inline">\(H(x)\)</span> 是序列 <span class="math inline">\(h_0,h_1,\ldots,h_{n-1}\)</span> 的母函数，那么 <span class="math display">\[
-\begin{eqnarray}
-H(x)&amp;=&amp;\sum_{i=0}^{n-1}\frac{a_i}{1-b_ix}\\&amp;=&amp;\frac{\sum_{i=0}^{n-1} a_i \prod_{j\ne i }(1-b_jx)}{\prod_{i=0}^{n-1}(1-b_ix)}
-\end{eqnarray}
-\]</span> 再设 <span class="math display">\[
-\begin{eqnarray}
-R(x)&amp;=&amp;\prod_{i=0}^{n-1}(1-b_ix)\\
-P(x)&amp;=&amp;H(x)R(x)\\
-&amp;=&amp;\sum_{i=0}^{n-1}a_i\prod_{j\ne i}(1-b_jx)
-\end{eqnarray}
-\]</span> 由于后者是一个 <span class="math inline">\(n-1\)</span> 次多项式，那么卷积 <span class="math inline">\(H(x)\)</span> 和 <span class="math inline">\(R(x)\)</span> 求 <span class="math inline">\(P(x)\)</span> 的时候可以在 <span class="math inline">\(\bmod x^n\)</span> 的意义下进行</p>
-<p>将 <span class="math inline">\(x=\frac{1}{b_i}\)</span> 代入 <span class="math inline">\(P(x)\)</span> 可以得到 <span class="math display">\[
-P(\frac{1}{b_i})=a_i\prod_{i\ne j}(1-\frac{b_j}{b_i})
-\]</span> 现在的问题是如何快速对于所有 <span class="math inline">\(i\)</span> 计算 <span class="math inline">\(\prod_{i\ne j}(1-\frac{b_j}{b_i})\)</span></p>
-<p>构造 <span class="math display">\[
-Q(x)=\sum_{i=0}^{n-1}\prod_{i\ne j}(1-b_jx)
-\]</span> 将 <span class="math inline">\(x=\frac{1}{b_i}\)</span> 代入 <span class="math inline">\(Q(x)\)</span> 可以得到 <span class="math display">\[
-Q(\frac{1}{b_i})=\prod_{i\ne j}(1-\frac{b_j}{b_i})
-\]</span></p>
-<p>则 <span class="math display">\[
-a_i=\frac{P(\frac{1}{b_i})}{Q(\frac{1}{b_i})}
-\]</span></p>
-<p>注意到（这里的 <span class="math inline">\(\operatorname{reverse}\)</span> 指在 <span class="math inline">\(\bmod x^n\)</span> 意义下翻转多项式的前 <span class="math inline">\(n\)</span> 项系数） <span class="math display">\[
-\begin{eqnarray}
-Q(x)&amp;=&amp;\operatorname{reverse}(\sum_{i=0}^{n-1}\prod_{i\ne j}(x-b_j))\\
-&amp;=&amp;\operatorname{reverse}(\frac{\mathrm{d}}{\mathrm{d}x}\prod_{i=0}^{n-1}(x-b_i))\\
-R(x)&amp;=&amp;\operatorname{reverse}(\prod_{i=0}^{n-1}(x-b_i))
-\end{eqnarray}
-\]</span> 对比 <span class="math inline">\(Q(x)\)</span> 和 <span class="math inline">\(R(x)\)</span> 的系数可以得到 <span class="math display">\[
-Q(x)=\sum_{i=0}^{n-1}x^i(n-i)[x^i]R(x)
-\]</span></p>
-<p>那么只需要先分治 FFT 求出 <span class="math inline">\(R(x)\)</span>，然后求出 <span class="math inline">\(P(x)\)</span> 和 <span class="math inline">\(Q(x)\)</span>，对 <span class="math inline">\(P(x)\)</span> 和 <span class="math inline">\(Q(x)\)</span> 分别进行多点求值即可</p>
-<p>复杂度 <span class="math inline">\(O(n\log^2n)\)</span></p>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://owenowl.github.io/poly2/" data-id="cl1neuwpm0001qki669qcf14g" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>OwenOwl</title>
   
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
   </div>
 
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">OwenOwl</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/thujx/">清华集训 2017 题解</a>
-          </li>
-        
-          <li>
-            <a href="/BZOJ3864/">BZOJ3864 题解</a>
-          </li>
-        
-          <li>
-            <a href="/poly2/">多项式题目“啖光之花”题解</a>
-          </li>
-        
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
       </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">OwenOwl</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
     </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 OwenOwl<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://owenowl.github.io/220406-agametheoryproblem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="OwenOwl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/220406-agametheoryproblem/" class="post-title-link" itemprop="url">一个尚待显式解决的博弈问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-06 19:17:35 / Modified: 20:05:52" itemprop="dateCreated datePublished" datetime="2022-04-06T19:17:35+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%B6%A3%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">趣题</span></a>
+        </span>
+    </span>
 
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&#x5706;&#x684C;&#x4E0A;&#x7684; 6 &#x679A;&#x786C;&#x5E01;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/220406-agametheoryproblem/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://owenowl.github.io/220406-somethingnew/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="OwenOwl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/220406-somethingnew/" class="post-title-link" itemprop="url">新的地界</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-06 19:00:00 / Modified: 19:14:26" itemprop="dateCreated datePublished" datetime="2022-04-06T19:00:00+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%83%B3%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">想法</span></a>
+        </span>
+    </span>
 
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6362;&#x65B0;&#x7684;&#x535A;&#x5BA2;&#xFF1F;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/220406-somethingnew/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-<script src="/js/script.js"></script>
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://owenowl.github.io/archive-thujx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="OwenOwl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/archive-thujx/" class="post-title-link" itemprop="url">清华集训 2017 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-28 20:08:00" itemprop="dateCreated datePublished" datetime="2018-09-28T20:08:00+08:00">2018-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-06 18:53:27" itemprop="dateModified" datetime="2022-04-06T18:53:27+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&#x6E05;&#x534E;&#x96C6;&#x8BAD; 2017 &#x9898;&#x89E3;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/archive-thujx/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://owenowl.github.io/archive-BZOJ3864/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="OwenOwl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/archive-BZOJ3864/" class="post-title-link" itemprop="url">BZOJ3864 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-20 15:53:00" itemprop="dateCreated datePublished" datetime="2018-09-20T15:53:00+08:00">2018-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-06 18:53:20" itemprop="dateModified" datetime="2022-04-06T18:53:20+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><span class="math inline">\(n\)</span> &#x4E2A;&#x53F6;&#x5B50;&#xFF0C;&#x6BCF;&#x4E2A;&#x975E;&#x53F6;&#x8282;&#x70B9;&#x513F;&#x5B50;&#x6570; <span class="math inline">\(\in D\)</span> &#x7684;&#x6709;&#x6839;&#x6811;&#x4E2A;&#x6570;&#xFF08;&#x513F;&#x5B50;&#x6709;&#x5E8F;&#xFF09;&#x3002;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/archive-BZOJ3864/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://owenowl.github.io/archive-poly2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="OwenOwl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | OwenOwl">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/archive-poly2/" class="post-title-link" itemprop="url">多项式题目“啖光之花”题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-30 23:18:00" itemprop="dateCreated datePublished" datetime="2018-08-30T23:18:00+08:00">2018-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-06 18:53:30" itemprop="dateModified" datetime="2022-04-06T18:53:30+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&#x5DF2;&#x77E5; <span class="math inline">\(h_k = \sum_{i=0}^{n-1} a_ib_i^k \;(0\le k&lt;n)\)</span></p>
+<p>&#x73B0;&#x7ED9;&#x51FA; <span class="math inline">\(n\)</span>&#xFF0C;<span class="math inline">\(h_0,h_1,\ldots,h_{n-1}\)</span>&#xFF0C;<span class="math inline">\(b_0,b_1,\ldots,b_{n-1}\)</span></p>
+<p>&#x6C42; <span class="math inline">\(a_0,a_1,\ldots,a_{n-1}\)</span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/archive-poly2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OwenOwl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
 </body>
 </html>
