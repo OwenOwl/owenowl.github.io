@@ -5,13 +5,17 @@
   
 
   
-  <title>Archives | OwenOwl</title>
+  <title>BZOJ3864 题解 | OwenOwl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="OwenOwl">
-<meta property="og:url" content="https://owenowl.github.io/archives/index.html">
+  <meta name="description" content="$n$ 个叶子，每个非叶节点儿子数 $\in D$ 的有根树个数（儿子有序）。 解答答案的母函数：$$F(x) &#x3D; 1+\sum_{d\in D} F^d(x)$$那么$$F(x)-\sum_{d\in D}F^d(x) &#x3D; 1$$设$$A(x) &#x3D; x-\sum_{d\in D}x^d$$则有$$A(F(x)) &#x3D; 1$$拉格朗日反演得到$$\begin{eqnarray}[x^n]F(x) &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ3864 题解">
+<meta property="og:url" content="https://owenowl.github.io/BZOJ3864/index.html">
 <meta property="og:site_name" content="OwenOwl">
+<meta property="og:description" content="$n$ 个叶子，每个非叶节点儿子数 $\in D$ 的有根树个数（儿子有序）。 解答答案的母函数：$$F(x) &#x3D; 1+\sum_{d\in D} F^d(x)$$那么$$F(x)-\sum_{d\in D}F^d(x) &#x3D; 1$$设$$A(x) &#x3D; x-\sum_{d\in D}x^d$$则有$$A(F(x)) &#x3D; 1$$拉格朗日反演得到$$\begin{eqnarray}[x^n]F(x) &amp;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-20T07:53:00.000Z">
+<meta property="article:modified_time" content="2022-04-06T10:01:58.398Z">
 <meta property="article:author" content="OwenOwl">
 <meta name="twitter:card" content="summary">
   
@@ -62,78 +66,63 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/thujx/" class="archive-article-date">
-  <time datetime="2018-09-28T12:08:00.000Z" itemprop="datePublished">Sep 28</time>
+        <section id="main"><article id="post-BZOJ3864" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/BZOJ3864/" class="article-date">
+  <time datetime="2018-09-20T07:53:00.000Z" itemprop="datePublished">2018-09-20</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/thujx/">清华集训 2017 题解</a>
+    <h1 class="article-title" itemprop="name">
+      BZOJ3864 题解
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/BZOJ3864/" class="archive-article-date">
-  <time datetime="2018-09-20T07:53:00.000Z" itemprop="datePublished">Sep 20</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/BZOJ3864/">BZOJ3864 题解</a>
-    </h1>
-  
+        <p>$n$ 个叶子，每个非叶节点儿子数 $\in D$ 的有根树个数（儿子有序）。</p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>答案的母函数：<br>$$<br>F(x) = 1+\sum_{d\in D} F^d(x)<br>$$<br>那么<br>$$<br>F(x)-\sum_{d\in D}F^d(x) = 1<br>$$<br>设<br>$$<br>A(x) = x-\sum_{d\in D}x^d<br>$$<br>则有<br>$$<br>A(F(x)) = 1<br>$$<br>拉格朗日反演得到<br>$$<br>\begin{eqnarray}<br>[x^n]F(x) &amp;=&amp; \frac{1}{n}[x^{-1}]\frac{1}{A^n(x)}\<br>&amp;=&amp; \frac{1}{n}[x^{n-1}]\left(\frac{x}{A(x)}\right)^n<br>\end{eqnarray}<br>$$</p>
+<p>其中 $A(x)​$ 约掉上面的 $x​$ 之后常数项为 $1​$，可以直接 $ln​$ + $exp​$。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/poly2/" class="archive-article-date">
-  <time datetime="2018-08-30T15:18:00.000Z" itemprop="datePublished">Aug 30</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/poly2/">多项式题目“啖光之花”题解</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://owenowl.github.io/BZOJ3864/" data-id="cl1neiqua0000wci69leh4fm6" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/thujx/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          清华集训 2017 题解
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/poly2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">多项式题目“啖光之花”题解</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
