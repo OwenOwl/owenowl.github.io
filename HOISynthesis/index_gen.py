@@ -8,8 +8,13 @@ tot_files = [f.strip() for f in fid.readlines()]
 fid.close()
 
 for grp in range(5):
-    files = tot_files[grp::5]
+    category = ['bucket', 'kettle', 'laptop', 'pliers', 'scissors'][grp]
+    files = []
+    for file in tot_files:
+        if file.split('/')[1] == category:
+            files.append(file)
     random.shuffle(files)
+    print(len(files))
     
     txt_block0 = '''score = 'nan';
       button = document.getElementsByName('score%d');
