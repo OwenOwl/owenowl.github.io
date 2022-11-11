@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>HOISynthesis</title>
+<script type="text/javascript">
+function RND()
+{
+	var mx = 5;
+	var mn = 1;
+	var res = Math.floor(Math.random()*(mx-mn+1)+mn);
+  var hrf = window.location.href;
+  window.location.href = "https://owenowl.github.io/HOISynthesis/group_" + res + ".html"
+}
+</script>
+</head>
+<body>
+	<button type="button" onclick="RND()" value="rand">开始</button>
+</body>
+</html>
+

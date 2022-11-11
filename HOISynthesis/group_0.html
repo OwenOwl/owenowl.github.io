@@ -1,0 +1,305 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HOISynthesis</title>
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <script language="Javascript" >
+    function download(filename) {
+      var button;
+      var text='';
+      var score;score = 'nan';
+      button = document.getElementsByName('score0');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/kettle/1-1.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score1');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/scissors/1-1.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score2');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/kettle/0-0.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score3');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/bucket/0-0.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score4');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/scissors/0-0.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score5');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/laptop/0-0.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score6');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/laptop/1-1.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score7');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/bucket/1-1.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score8');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/pliers/0-0.mkv'+': '+score+'\n';score = 'nan';
+      button = document.getElementsByName('score9');
+      for(var i = 0; i < button.length; i++){
+          if(button[i].checked){
+              score = button[i].id;
+          }
+      }
+      text += 'cams/pliers/1-1.mkv'+': '+score+'\n';var pom = document.createElement('a');
+      pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      pom.setAttribute('download', filename);
+      pom.style.display = 'none';
+      document.body.appendChild(pom);
+      pom.click();
+      document.body.removeChild(pom);
+    }
+    </script>
+    </head>
+
+    <body>
+    <div>
+    请按照视频的类人真实度、物理真实度对每段视频打分。<br>
+    1分 - 视频动作和人类行为差别非常大，存在大量穿模、手部运动与物体运动不配套等物理不真实现象<br>
+    3分 - 视频具有一定的类人真实度和物理真实度，但仍能察觉到与人类行为的差异，或具有较为明显的物理缺陷<br>
+    5分 - 该视频与人类操作行为基本一致且物理真实
+    </div>
+
+    <table width="100%" style="border-style: solid"><tbody><tr>
+    <td width="60%" valign="top">
+      <video id="test0" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/kettle/1-1.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score0" /><br />
+      2分: <input type="radio" id=2 name="score0" /><br />
+      3分: <input type="radio" id=3 name="score0" /><br />
+      4分: <input type="radio" id=4 name="score0" /><br />
+      5分: <input type="radio" id=5 name="score0" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test1" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/scissors/1-1.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score1" /><br />
+      2分: <input type="radio" id=2 name="score1" /><br />
+      3分: <input type="radio" id=3 name="score1" /><br />
+      4分: <input type="radio" id=4 name="score1" /><br />
+      5分: <input type="radio" id=5 name="score1" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test2" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/kettle/0-0.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score2" /><br />
+      2分: <input type="radio" id=2 name="score2" /><br />
+      3分: <input type="radio" id=3 name="score2" /><br />
+      4分: <input type="radio" id=4 name="score2" /><br />
+      5分: <input type="radio" id=5 name="score2" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test3" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/bucket/0-0.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score3" /><br />
+      2分: <input type="radio" id=2 name="score3" /><br />
+      3分: <input type="radio" id=3 name="score3" /><br />
+      4分: <input type="radio" id=4 name="score3" /><br />
+      5分: <input type="radio" id=5 name="score3" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test4" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/scissors/0-0.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score4" /><br />
+      2分: <input type="radio" id=2 name="score4" /><br />
+      3分: <input type="radio" id=3 name="score4" /><br />
+      4分: <input type="radio" id=4 name="score4" /><br />
+      5分: <input type="radio" id=5 name="score4" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test5" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/laptop/0-0.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score5" /><br />
+      2分: <input type="radio" id=2 name="score5" /><br />
+      3分: <input type="radio" id=3 name="score5" /><br />
+      4分: <input type="radio" id=4 name="score5" /><br />
+      5分: <input type="radio" id=5 name="score5" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test6" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/laptop/1-1.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score6" /><br />
+      2分: <input type="radio" id=2 name="score6" /><br />
+      3分: <input type="radio" id=3 name="score6" /><br />
+      4分: <input type="radio" id=4 name="score6" /><br />
+      5分: <input type="radio" id=5 name="score6" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test7" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/bucket/1-1.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score7" /><br />
+      2分: <input type="radio" id=2 name="score7" /><br />
+      3分: <input type="radio" id=3 name="score7" /><br />
+      4分: <input type="radio" id=4 name="score7" /><br />
+      5分: <input type="radio" id=5 name="score7" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test8" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/pliers/0-0.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score8" /><br />
+      2分: <input type="radio" id=2 name="score8" /><br />
+      3分: <input type="radio" id=3 name="score8" /><br />
+      4分: <input type="radio" id=4 name="score8" /><br />
+      5分: <input type="radio" id=5 name="score8" />
+    </p>
+    </fieldset>
+    </td>
+    </tr><tr>
+    <td width="60%" valign="top">
+      <video id="test9" height="480" width="640" style="border-style: solid" align="top" controls>
+        <source src="./cams/pliers/1-1.mkv" type="video/mp4">
+      </video>
+    </td>
+    <td width="40%" valign="top">
+    <fieldset>
+    <legend>请打分:</legend>
+    <p>
+      1分: <input type="radio" id=1 name="score9" /><br />
+      2分: <input type="radio" id=2 name="score9" /><br />
+      3分: <input type="radio" id=3 name="score9" /><br />
+      4分: <input type="radio" id=4 name="score9" /><br />
+      5分: <input type="radio" id=5 name="score9" />
+    </p>
+    </fieldset>
+    </td>
+    </tr></tbody></table>
+    <br><br>
+    <form onsubmit="download(this['name'].value+'_0.txt')">
+      <input type="text" name="name" value="请输入您的ID">
+      <input type="submit" value="结果下载">
+    </form>
+    <script>
+    var vid;vid = document.getElementById("test0");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test1");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test2");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test3");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test4");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test5");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test6");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test7");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test8");
+    vid.defaultPlaybackRate = 2;
+    vid.load();vid = document.getElementById("test9");
+    vid.defaultPlaybackRate = 2;
+    vid.load();</script>
+    </body></html>
