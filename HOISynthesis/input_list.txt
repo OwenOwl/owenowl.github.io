@@ -198,12 +198,6 @@ gt/scissors/0007.png0001-0199.mkv
 gt/scissors/0008.png0001-0199.mkv
 gt/scissors/0009.png0001-0199.mkv
 gt/scissors/100001-0199.mkv
-manipnet/bucket/0.mkv
-manipnet/bucket/1.mkv
-manipnet/bucket/2.mkv
-manipnet/bucket/3.mkv
-manipnet/bucket/4.mkv
-manipnet/bucket/5.mkv
 manipnet/kettle/0.mkv
 manipnet/kettle/1.mkv
 manipnet/kettle/2.mkv
@@ -239,3 +233,10 @@ manipnet/scissors/4.mkv
 manipnet/scissors/5.mkv
 manipnet/scissors/6.mkv
 manipnet/scissors/7.mkv
+manipnet/bucket/clip1.mkv
+manipnet/bucket/clip2.mkv
+manipnet/bucket/clip3.mkv
+manipnet/bucket/clip4.mkv
+manipnet/bucket/clip5.mkv
+manipnet/bucket/clip6.mkv
+manipnet/bucket/clip7.mkv
