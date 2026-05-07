@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opus Magnum</title>
+    <link rel="stylesheet" href="./opus-showcase.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <main class="opus-wrap">
+      <header class="page-head">
+        <p class="kicker">Opus Magnum</p>
+        <h1>Opus Magnum 关卡最优解决方案</h1>
+        <p class="subtitle">一关的最优值，我先在 Reddit 上查到数值，然后自己设计解决方案，我也会附上一些思路在章节或者关卡下面。达成了一个最优的解决方案我就不会再继续优化其他项了，所以有的周期设计会很乱，有的区域操作会很唐。游戏非常好玩，本页应该还会持续更新，之后还会玩 DLC！</p>
+      </header>
+
+      <section class="chapter-list">
+
+        <details class="chapter">
+          <summary>大家族中的生活</summary>
+          <div class="level-list">
+
+          <p class="chapter-intro">第一章打最优基本不太困难。周期的话，这个游戏计算方式是完成第 6 或者 12 个产品的时候，一般来说相当于 5 个纯周期加上半截常数，所以优化的时候其实大部分时间是在优化这个常数。优化周期需要明白一个道理，就是如果一个机械臂抓着分子一路操作，那纯周期就很长，这个一般上来就被优化掉了；等改得纯周期短，设计就有可能是几个机械臂要交替着倒手，这就导致最后一轮从原料到产品的常数很大。我找的解决方案就是如果有这种情况，就用几个机械臂在轨道上转，组成一个周期之间不会倒手暂停的整体。对于区域，这一章前面知道有时候需要暂时移开部分分子腾位置就行了，最后两关比较吃操作。</p>
+
+            <details class="level">
+              <summary>精炼金</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E7%82%BC%E9%87%91%20%2840G%2C%20179%2C%206%2C%202026-05-07-03-27-52%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">62</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E7%82%BC%E9%87%91%20%28100G%2C%2062%2C%209%2C%202026-05-07-03-28-48%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">6</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E7%82%BC%E9%87%91%20%2840G%2C%20179%2C%206%2C%202026-05-07-03-27-52%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>散粉</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%95%A3%E7%B2%89%20%2840G%2C%2094%2C%207%2C%202026-05-07-03-33-14%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">26</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%95%A3%E7%B2%89%20%28130G%2C%2026%2C%2015%2C%202026-05-07-03-33-31%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">7</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%95%A3%E7%B2%89%20%2840G%2C%2094%2C%207%2C%202026-05-07-03-33-14%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>防水密封剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">30</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%98%B2%E6%B0%B4%E5%AF%86%E5%B0%81%E5%89%82%20%2830G%2C%20130%2C%2016%2C%202026-05-07-03-37-03%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">26</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%98%B2%E6%B0%B4%E5%AF%86%E5%B0%81%E5%89%82%20%28150G%2C%2026%2C%2013%2C%202026-05-07-03-36-27%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">8</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%98%B2%E6%B0%B4%E5%AF%86%E5%B0%81%E5%89%82%20%2850G%2C%20106%2C%208%2C%202026-05-07-03-36-03%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>醒酒药</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%86%92%E9%85%92%E8%8D%AF%20%2840G%2C%20142%2C%2016%2C%202026-05-07-04-11-03%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">38</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%86%92%E9%85%92%E8%8D%AF%20%28210G%2C%2038%2C%2023%2C%202026-05-07-04-10-30%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">8</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%86%92%E9%85%92%E8%8D%AF%20%2860G%2C%20178%2C%208%2C%202026-05-07-04-12-46%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>飞船燃料</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%A3%9E%E8%88%B9%E7%87%83%E6%96%99%20%2840G%2C%20184%2C%2033%2C%202026-05-07-04-13-43%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">19</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%A3%9E%E8%88%B9%E7%87%83%E6%96%99%20%28685G%2C%2019%2C%2051%2C%202026-05-07-04-14-36%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  <p class="metric-note">原料输入速率能跑满，所以需要每第 6 个产品要尽可能快做好，另外因为输入是 3 个原子，产品是 4 个，速度拉满就必须每 3 个产品一组。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">10</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%A3%9E%E8%88%B9%E7%87%83%E6%96%99%20%2860G%2C%20213%2C%2010%2C%202026-05-07-04-15-22%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>精密机油</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">60</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E5%AF%86%E6%9C%BA%E6%B2%B9%20%2860G%2C%20278%2C%2018%2C%202026-05-07-04-23-27%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">27</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E5%AF%86%E6%9C%BA%E6%B2%B9%20%28380G%2C%2027%2C%2076%2C%202026-05-07-04-23-55%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">11</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%B2%BE%E5%AF%86%E6%9C%BA%E6%B2%B9%20%2870G%2C%20262%2C%2011%2C%202026-05-07-04-19-51%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>健康补剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">30</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%81%A5%E5%BA%B7%E8%A1%A5%E5%89%82%20%2830G%2C%20179%2C%2033%2C%202026-05-07-04-35-57%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">26</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%81%A5%E5%BA%B7%E8%A1%A5%E5%89%82%20%28120G%2C%2026%2C%2030%2C%202026-05-07-04-37-24%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">13</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%81%A5%E5%BA%B7%E8%A1%A5%E5%89%82%20%2850G%2C%20177%2C%2013%2C%202026-05-07-04-38-10%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  <p class="metric-note">需要一直卡住原料口。</p>
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>耐力药水</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">60</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E8%80%90%E5%8A%9B%E8%8D%AF%E6%B0%B4%20%2860G%2C%20370%2C%2032%2C%202026-05-07-04-40-39%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">27</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E8%80%90%E5%8A%9B%E8%8D%AF%E6%B0%B4%20%28310G%2C%2027%2C%2033%2C%202026-05-07-04-41-07%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">18</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E8%80%90%E5%8A%9B%E8%8D%AF%E6%B0%B4%20%2870G%2C%20580%2C%2018%2C%202026-05-07-04-42-40%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  <p class="metric-note">需要临时卡原料口腾出空间来转分子。如果不卡原料口只能做到 19 区域。用我的方法暂时借一个空格出来，或者用铅去堵原料口都可以。</p>
+                </article>
+              </div>
+
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter">
+          <summary>前所未有之举</summary>
+          <div class="level-list">
+
+
+            <details class="level">
+              <summary>美发产品</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">30</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%BE%8E%E5%8F%91%E4%BA%A7%E5%93%81%20%2830G%2C%20177%2C%2018%2C%202026-05-07-04-57-24%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">50</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%BE%8E%E5%8F%91%E4%BA%A7%E5%93%81%20%28205G%2C%2050%2C%2029%2C%202026-05-07-04-57-54%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">8</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%BE%8E%E5%8F%91%E4%BA%A7%E5%93%81%20%2850G%2C%20153%2C%208%2C%202026-05-07-04-58-45%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>火箭推进剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%81%AB%E7%AE%AD%E6%8E%A8%E8%BF%9B%E5%89%82%20%2840G%2C%20238%2C%2051%2C%202026-05-07-05-00-04%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">33</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%81%AB%E7%AE%AD%E6%8E%A8%E8%BF%9B%E5%89%82%20%28490G%2C%2033%2C%2041%2C%202026-05-07-04-59-10%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  <p class="metric-note">每两个产品一组。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">11</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%81%AB%E7%AE%AD%E6%8E%A8%E8%BF%9B%E5%89%82%20%2870G%2C%20274%2C%2011%2C%202026-05-07-05-01-25%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>失能迷雾</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">60</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%A4%B1%E8%83%BD%E8%BF%B7%E9%9B%BE%20%2860G%2C%20320%2C%2013%2C%202026-05-07-05-02-35%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  <p class="metric-note">组合原子以后就可以够到一些原本够不到的位置。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">26</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%A4%B1%E8%83%BD%E8%BF%B7%E9%9B%BE%20%28210G%2C%2026%2C%2024%2C%202026-05-07-05-04-33%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">12</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%A4%B1%E8%83%BD%E8%BF%B7%E9%9B%BE%20%2870G%2C%20310%2C%2012%2C%202026-05-07-05-04-07%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>爆破瓶</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">60</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%88%86%E7%A0%B4%E7%93%B6%20%2860G%2C%20209%2C%2023%2C%202026-05-07-05-05-15%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">22</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%88%86%E7%A0%B4%E7%93%B6%20%28460G%2C%2022%2C%2067%2C%202026-05-07-05-06-43%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  <p class="metric-note">原料有两组，两边分别合成可以很快。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">11</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%88%86%E7%A0%B4%E7%93%B6%20%2880G%2C%20237%2C%2011%2C%202026-05-07-05-06-09%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>护甲细丝</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">50</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%A4%E7%94%B2%E7%BB%86%E4%B8%9D%20%2850G%2C%20270%2C%20223%2C%202026-05-07-05-10-33%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">49</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%A4%E7%94%B2%E7%BB%86%E4%B8%9D%20%28245G%2C%2049%2C%20117%2C%202026-05-07-05-32-40%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  <p class="metric-note">每隔几个周期手动把产品送过去检测一次。如果直接接在键合后面会永远慢一周期。（不知为何录制不上）</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">20</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%A4%E7%94%B2%E7%BB%86%E4%B8%9D%20%2870G%2C%20256%2C%2020%2C%202026-05-07-05-09-02%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>勇气药水</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%8B%87%E6%B0%94%E8%8D%AF%E6%B0%B4%20%2840G%2C%20239%2C%2020%2C%202026-05-07-05-12-02%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">26</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%8B%87%E6%B0%94%E8%8D%AF%E6%B0%B4%20%28265G%2C%2026%2C%2029%2C%202026-05-07-05-11-12%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">10</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%8B%87%E6%B0%94%E8%8D%AF%E6%B0%B4%20%2860G%2C%20287%2C%2010%2C%202026-05-07-05-13-12%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>投降信号弹</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">60</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%95%E9%99%8D%E4%BF%A1%E5%8F%B7%E5%BC%B9%20%2860G%2C%20213%2C%2049%2C%202026-05-07-05-14-21%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  <p class="metric-note">因为原料够宽，两格长的机械臂也能来回倒位置。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">16</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">23</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%95%E9%99%8D%E4%BF%A1%E5%8F%B7%E5%BC%B9%20%2890G%2C%20512%2C%2023%2C%202026-05-07-05-16-46%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  <p class="metric-note">需要一直卡着原料口。</p>
+                </article>
+              </div>
+
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter">
+          <summary>流放和盗窃</summary>
+          <div class="level-list">
+
+
+            <details class="level">
+              <summary>酒精分离</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">90</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%85%92%E7%B2%BE%E5%88%86%E7%A6%BB%20%2890G%2C%20263%2C%2030%2C%202026-05-07-05-18-14%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">16</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">18</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%85%92%E7%B2%BE%E5%88%86%E7%A6%BB%20%28120G%2C%20298%2C%2018%2C%202026-05-07-05-19-22%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  <p class="metric-note">让范贝德之轮移动就可以借用下方的空间，尤其这关产品需要的空间太散。</p>
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>净水器</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">50</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%87%80%E6%B0%B4%E5%99%A8%20%2850G%2C%20549%2C%2026%2C%202026-05-07-05-21-02%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">45</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%87%80%E6%B0%B4%E5%99%A8%20%28290G%2C%2045%2C%2069%2C%202026-05-07-05-21-47%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  <p class="metric-note">产品原子数是奇数，最大速度需要每两个产品用上一轮多余的一个原子。</p>
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">15</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%87%80%E6%B0%B4%E5%99%A8%20%2860G%2C%20393%2C%2015%2C%202026-05-07-05-23-20%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>溶蜡剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">70</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">50</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">14</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>攀岩绳纤维</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%94%80%E5%B2%A9%E7%BB%B3%E7%BA%A4%E7%BB%B4%20%2840G%2C%20458%2C%20494%2C%202026-05-07-05-25-23%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">74</span>
+                  </div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%94%80%E5%B2%A9%E7%BB%B3%E7%BA%A4%E7%BB%B4%20%28230G%2C%2074%2C%20178%2C%202026-05-07-05-33-20%29.gif" alt="周期 GIF" loading="lazy" /></div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">45</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>温暖补剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">40</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">27</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">15</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>生命感知药水</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">80</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">28</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">16</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>极黑的线</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">70</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">49</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">44</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter">
+          <summary>不寻常的盟友</summary>
+          <div class="level-list">
+
+
+            <details class="level">
+              <summary>氧化铝分离</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    <span class="metric-best">30</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    <span class="metric-best">23</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    <span class="metric-best">13</span>
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  <p class="metric-note">需要一个原子专门去卡原料口。</p>
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>去污剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>剑合金</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>隐形墨水</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>纯化金</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>炼金宝石</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>金色的线</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter">
+          <summary>瓦解阴谋</summary>
+          <div class="level-list">
+
+
+            <details class="level">
+              <summary>幻觉迷雾</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>计时水晶</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>流电线圈</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>不稳定化合物</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>古怪的口红</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+
+            <details class="level">
+              <summary>万溶剂</summary>
+              <div class="metric-stack">
+
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>费用</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>周期</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+                <article class="metric-card">
+                  <div class="metric-head">
+                    <h3>区域</h3>
+                    
+                  </div>
+                  <div class="gif-slot">GIF</div>
+                  
+                </article>
+              </div>
+
+            </details>
+          </div>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>
