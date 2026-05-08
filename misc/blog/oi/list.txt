@@ -1,0 +1,15 @@
+noip-2017.md
+thuwc-2018.md
+scoi-2018.md
+ctsc-apio-2018.md
+thusc-2018.md
+noi-2018.md
+noip-2018.md
+wc-2019.md
+scoi-2019.md
+thupc-2019.md
+cts-2019.md
+apio-2019.md
+noi-2019.md
+4th-metropolis.md
+pku-2019.md

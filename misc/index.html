@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Misc in OwenOwl</title>
+	<link rel="stylesheet" href="../static/css/misc.css" />
+	<style>
+		body {
+			padding: 1.4rem 1rem 1.8rem;
+		}
+
+		.misc-wrap {
+			width: min(1100px, calc(100% - 1rem));
+			margin: 0 auto;
+		}
+
+		.misc-head {
+			margin: 0 0 0.9rem;
+			color: var(--accent);
+			font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+		}
+
+		.misc-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.95rem;
+		}
+
+		.misc-card {
+			min-height: 210px;
+			border: 1px solid var(--line);
+			border-left: 4px solid var(--accent);
+			border-radius: 12px;
+			background: #ffffff;
+			box-shadow: var(--shadow);
+			padding: 0.9rem;
+			text-decoration: none;
+			color: var(--ink);
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.15s ease, background-color 0.15s ease;
+		}
+
+		.misc-card:hover {
+			transform: translateY(-2px);
+			background: var(--panel);
+		}
+
+		.misc-card h2 {
+			margin: 0;
+			font-size: 1.06rem;
+			color: var(--accent);
+		}
+
+		.misc-icon {
+			margin: auto 0;
+			text-align: center;
+			font-size: 3rem;
+			line-height: 1;
+		}
+
+		@media (max-width: 900px) {
+			.misc-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		@media (max-width: 620px) {
+			body {
+				padding: 0.9rem 0.7rem 1.2rem;
+			}
+
+			.misc-wrap {
+				width: calc(100% - 0.2rem);
+			}
+
+			.misc-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main class="misc-wrap">
+		<h1 class="misc-head">Miscellaneous</h1>
+		<section class="misc-grid">
+			<a class="misc-card" href="./game/opus/index.html">
+				<h2>Opus Magnum</h2>
+				<div class="misc-icon">⚗️</div>
+			</a>
+
+			<a class="misc-card" href="./blog/random/index.html">
+				<h2>Random Thoughts</h2>
+				<div class="misc-icon">🎲</div>
+			</a>
+
+			<a class="misc-card" href="./blog/oi/index.html">
+				<h2>OI</h2>
+				<div class="misc-icon">🧠</div>
+			</a>
+
+			<a class="misc-card" href="#">
+				<h2></h2>
+				<div class="misc-icon">🧩</div>
+			</a>
+
+			<a class="misc-card" href="#">
+				<h2></h2>
+				<div class="misc-icon">🗂️</div>
+			</a>
+
+			<a class="misc-card" href="#">
+				<h2></h2>
+				<div class="misc-icon">🛠️</div>
+			</a>
+		</section>
+	</main>
+</body>
+</html>

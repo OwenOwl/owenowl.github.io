@@ -4,6 +4,7 @@ from pathlib import Path
 import html
 import re
 import sys
+import os
 
 
 def parse_content_file(raw_text: str):
@@ -188,22 +189,24 @@ def render_chapter(chapter: dict, gif_index: dict) -> str:
         </details>"""
 
 
-def build_html(meta: dict, chapters, gif_index: dict) -> str:
+def build_html(meta: dict, chapters, gif_index: dict, stylesheet_href: str, back_href: str) -> str:
     chapter_blocks = "\n".join(render_chapter(chapter, gif_index) for chapter in chapters)
     safe_game_name = html.escape(meta["game_name"])
     safe_tab_title = html.escape(meta["tab_title"])
     safe_page_title = html.escape(meta["page_title"])
     safe_subtitle = html.escape(meta["subtitle"])
-
+    safe_stylesheet = html.escape(stylesheet_href, quote=True)
+    safe_back_href = html.escape(back_href, quote=True)
     return f"""<!doctype html>
 <html lang=\"zh-CN\">
   <head>
     <meta charset=\"UTF-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
     <title>{safe_tab_title}</title>
-    <link rel=\"stylesheet\" href=\"./opus-showcase.css\" />
+    <link rel=\"stylesheet\" href=\"{safe_stylesheet}\" />
   </head>
   <body>
+        <a class=\"back-link\" href=\"{safe_back_href}\">返回</a>
     <div class=\"page-bg\"></div>
     <main class=\"opus-wrap\">
       <header class=\"page-head\">
@@ -225,6 +228,8 @@ def main():
     base_dir = Path(__file__).resolve().parent
     input_path = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else base_dir / "content.txt"
     output_path = Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else base_dir / "index.html"
+    stylesheet_path = Path(sys.argv[3]).resolve() if len(sys.argv) > 3 else (base_dir / "../../../static/css/misc.css").resolve()
+    back_href = sys.argv[4] if len(sys.argv) > 4 else "../../index.html"
 
     if not input_path.exists():
         raise FileNotFoundError(f"未找到输入文件: {input_path}")
@@ -250,7 +255,8 @@ def main():
     if any(len(ch["levels"]) == 0 for ch in chapters):
         raise ValueError("存在没有关卡名的章节，请检查 content.txt 中每章的关卡列表。")
 
-    output_path.write_text(build_html(meta, chapters, gif_index), encoding="utf-8")
+    stylesheet_href = os.path.relpath(stylesheet_path, output_path.parent)
+    output_path.write_text(build_html(meta, chapters, gif_index, stylesheet_href, back_href), encoding="utf-8")
     print(f"已生成: {output_path}")
 
 
