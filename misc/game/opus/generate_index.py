@@ -8,7 +8,7 @@ import os
 
 
 def parse_content_file(raw_text: str):
-    lines = [line.strip() for line in raw_text.splitlines()]
+    raw_lines = raw_text.splitlines()
     meta = {
         "game_name": "",
         "tab_title": "",
@@ -19,8 +19,12 @@ def parse_content_file(raw_text: str):
     current_chapter = None
     current_level = None
 
-    for line in lines:
+    i = 0
+    while i < len(raw_lines):
+        raw_line = raw_lines[i]
+        line = raw_line.strip()
         if not line:
+            i += 1
             continue
 
         chapter_match = re.match(r"^章节[:：]\s*(.+)$", line)
@@ -32,6 +36,7 @@ def parse_content_file(raw_text: str):
             }
             chapters.append(current_chapter)
             current_level = None
+            i += 1
             continue
 
         bullet_match = re.match(r"^[-*•]\s*(.+)$", line)
@@ -43,12 +48,29 @@ def parse_content_file(raw_text: str):
                 "general_notes": [],
             }
             current_chapter["levels"].append(current_level)
+            i += 1
             continue
 
         kv_match = re.match(r"^(游戏名|标签页|标题|内容)[:：]\s*(.+)$", line)
         if kv_match:
             key = kv_match.group(1)
             value = kv_match.group(2)
+
+            # Support multiline content by consuming following lines with 4-space indentation.
+            if key == "内容":
+                continuation_lines = []
+                j = i + 1
+                while j < len(raw_lines):
+                    next_raw = raw_lines[j]
+                    if next_raw.startswith("    ") and next_raw.strip():
+                        continuation_lines.append(next_raw[4:])
+                        j += 1
+                        continue
+                    break
+                if continuation_lines:
+                    value = value + "\n" + "\n".join(continuation_lines)
+                i = j - 1
+
             if key == "内容" and current_chapter is not None and current_level is None:
                 current_chapter["intro"] = value
             else:
@@ -60,9 +82,11 @@ def parse_content_file(raw_text: str):
                 }
                 if key in key_map:
                     meta[key_map[key]] = value
+            i += 1
             continue
 
         if current_level is None:
+            i += 1
             continue
 
         gca_match = re.match(r"^(\d+)\s*/\s*(\d+)\s*/\s*(\d+)$", line)
@@ -72,16 +96,23 @@ def parse_content_file(raw_text: str):
                 "周期": gca_match.group(2),
                 "区域": gca_match.group(3),
             }
+            i += 1
             continue
 
         metric_note_match = re.match(r"^(费用|周期|区域)[:：]\s*(.+)$", line)
         if metric_note_match:
             current_level["metric_notes"][metric_note_match.group(1)] = metric_note_match.group(2)
+            i += 1
             continue
 
         current_level["general_notes"].append(line)
+        i += 1
 
     return meta, chapters
+
+
+def html_with_breaks(text: str) -> str:
+    return html.escape(text).replace("\n", "<br />")
 
 
 def build_gif_index(gif_dir: Path) -> dict:
@@ -129,7 +160,7 @@ def render_metric_card(
         encoded = urllib.parse.quote(gif_path, safe="./")
         slot_content = f'<img src="{encoded}" alt="{html.escape(metric_name)} GIF" loading="lazy" />'
     else:
-        slot_content = "GIF"
+        slot_content = "未解决"
 
     return f"""
                 <article class="metric-card">
@@ -148,6 +179,8 @@ def render_level(level: dict, gif_index: dict) -> str:
     cards = []
     for metric in metrics:
         best_value = level["best"].get(metric, "")
+        if best_value == "0":
+            continue
         cards.append(
             render_metric_card(
                 metric_name=metric,
@@ -163,13 +196,13 @@ def render_level(level: dict, gif_index: dict) -> str:
         general_note_block = f'\n              <p class="level-note">{joined_notes}</p>'
 
     return f"""
-            <details class=\"level\">
-              <summary>{safe_level_name}</summary>
+                        <section class=\"level\">
+                            <h3 class=\"level-title\">{safe_level_name}</h3>
               <div class=\"metric-stack\">
 {"".join(cards)}
               </div>
 {general_note_block}
-            </details>"""
+                        </section>"""
 
 
 def render_chapter(chapter: dict, gif_index: dict) -> str:
@@ -177,7 +210,7 @@ def render_chapter(chapter: dict, gif_index: dict) -> str:
     level_blocks = "\n".join(render_level(level, gif_index) for level in chapter["levels"])
     intro_block = ""
     if chapter.get("intro"):
-        intro_block = f'\n          <p class="chapter-intro">{html.escape(chapter["intro"])}</p>'
+        intro_block = f'\n          <p class="chapter-intro">{html_with_breaks(chapter["intro"])}</p>'
 
     return f"""
         <details class="chapter">
@@ -194,7 +227,7 @@ def build_html(meta: dict, chapters, gif_index: dict, stylesheet_href: str, back
     safe_game_name = html.escape(meta["game_name"])
     safe_tab_title = html.escape(meta["tab_title"])
     safe_page_title = html.escape(meta["page_title"])
-    safe_subtitle = html.escape(meta["subtitle"])
+    safe_subtitle = html_with_breaks(meta["subtitle"])
     safe_stylesheet = html.escape(stylesheet_href, quote=True)
     safe_back_href = html.escape(back_href, quote=True)
     return f"""<!doctype html>
