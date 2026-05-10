@@ -13,7 +13,7 @@
       <header class="page-head">
         <p class="kicker">Opus Magnum</p>
         <h1>Opus Magnum 关卡最优解决方案</h1>
-        <p class="subtitle">一关的最优值，我先在 Reddit 上查到数值，然后自己设计解决方案，没有图就是还没打出来！我也会附上一些思路在章节或者关卡下面。达成了一个最优的解决方案我就不会再继续优化其他项了，所以有的周期设计会很乱，有的区域操作会很唐。<br />另外附上我认为过于反人类不适合自己研究最优解的本体关卡，不看攻略想不出来的。这些关卡都必须在一个循环以内纯手动完成：<br />* 本体：酒精分离（周期），极黑的线（区域），氧化铅分离（周期），通用溶剂（周期）。<br />游戏非常好玩，本页应该还会持续更新，之后还会玩 DLC！</p>
+        <p class="subtitle">一关的最优值，我先在 Reddit 上查到数值，然后自己设计解决方案，没有图就是还没打出来！我也会附上一些思路在章节或者关卡下面。达成了一个最优的解决方案我就不会再继续优化其他项了，所以有的周期设计会很乱，有的区域操作会很唐。<br />另外附上我认为过于反人类不适合自己研究最优解的本体关卡，不看攻略想不出来的。这些关最优情况都脱离了游戏“设计循环”的初衷。<br />* 需要少于一个循环完成：酒精分离（周期），极黑的线（区域），氧化铅分离（周期），万溶剂（周期）。<br />* 需要初始化后手动展开循环：金色的线（费用/区域）。<br />游戏非常好玩，本页应该还会持续更新，之后还会玩 DLC！</p>
       </header>
 
       <section class="chapter-list">
@@ -434,7 +434,7 @@
                     <span class="metric-best">49</span>
                   </div>
                   <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E6%8A%A4%E7%94%B2%E7%BB%86%E4%B8%9D%20%28230G%2C%2049%2C%2050%2C%202026-05-07-12-16-06%29.gif" alt="周期 GIF" loading="lazy" /></div>
-                  <p class="metric-note">每 3 轮手动把产品送过去检测一次，检测的那一次要提前取原料，先键合后嬗变。</p>
+                  <p class="metric-note">每 3 轮手动把产品送过去检测一次，检测的那一次要提前取原料，先键合后投射。</p>
                 </article>
                 <article class="metric-card">
                   <div class="metric-head">
@@ -750,6 +750,7 @@
           <summary>本体 IV - 不寻常的盟友</summary>
           <div class="level-list">
 
+          <p class="chapter-intro">这一章产物比较复杂，有很多写指令很折磨的关。</p>
 
                         <section class="level">
                             <h3 class="level-title">氧化铅分离</h3>
@@ -808,7 +809,7 @@
                     <h3>区域</h3>
                     <span class="metric-best">22</span>
                   </div>
-                  <div class="gif-slot">未解决</div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E5%8E%BB%E6%B1%A1%E5%89%82%20%28110G%2C%20849%2C%2022%2C%202026-05-10-02-50-22%29.gif" alt="区域 GIF" loading="lazy" /></div>
                   
                 </article>
               </div>
@@ -920,7 +921,7 @@
                     <h3>费用</h3>
                     <span class="metric-best">50</span>
                   </div>
-                  <div class="gif-slot">未解决</div>
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E7%82%BC%E9%87%91%E5%AE%9D%E7%9F%B3%20%2850G%2C%20945%2C%2093%2C%202026-05-10-16-19-36%29.gif" alt="费用 GIF" loading="lazy" /></div>
                   
                 </article>
                 <article class="metric-card">
@@ -952,8 +953,8 @@
                     <h3>费用</h3>
                     <span class="metric-best">30</span>
                   </div>
-                  <div class="gif-slot">未解决</div>
-                  
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%87%91%E8%89%B2%E7%9A%84%E7%BA%BF%20%2830G%2C%20594%2C%20565%2C%202026-05-10-05-00-46%29.gif" alt="费用 GIF" loading="lazy" /></div>
+                  <p class="metric-note">这关要用到 U 型和单个原子可以交换位置，所以只有后面能够循环起来，一开始需要额外初始化，因此只能把 6 遍指令全部展开。（图上为了能录制 GIF 加了专门初始化的机械臂）</p>
                 </article>
                 <article class="metric-card">
                   <div class="metric-head">
@@ -968,8 +969,8 @@
                     <h3>区域</h3>
                     <span class="metric-best">48</span>
                   </div>
-                  <div class="gif-slot">未解决</div>
-                  
+                  <div class="gif-slot"><img src="./gif/Opus%20Magnum%20-%20%E9%87%91%E8%89%B2%E7%9A%84%E7%BA%BF%20%28100G%2C%20472%2C%2048%2C%202026-05-10-15-40-13%29.gif" alt="区域 GIF" loading="lazy" /></div>
+                  <p class="metric-note">为了不占用最右侧省略号的位置，同样要单独初始化两边分离的盐，然后把剩下的循环展开 6 次。（图上也是为了能录制 GIF 所以只能展示不初始化占了最右边格的情况）</p>
                 </article>
               </div>
 
