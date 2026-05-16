@@ -16,6 +16,7 @@ def parse_content_file(raw_text: str):
         "subtitle": "",
     }
     chapters = []
+    sections = []
     current_chapter = None
     current_level = None
 
@@ -35,6 +36,7 @@ def parse_content_file(raw_text: str):
                 "levels": [],
             }
             chapters.append(current_chapter)
+            sections.append({"type": "chapter", "chapter": current_chapter})
             current_level = None
             i += 1
             continue
@@ -51,7 +53,7 @@ def parse_content_file(raw_text: str):
             i += 1
             continue
 
-        kv_match = re.match(r"^(游戏名|标签页|标题|内容)[:：]\s*(.+)$", line)
+        kv_match = re.match(r"^(游戏名|标签页|标题|内容)[:：]\s*(.*)$", line)
         if kv_match:
             key = kv_match.group(1)
             value = kv_match.group(2)
@@ -71,8 +73,13 @@ def parse_content_file(raw_text: str):
                     value = value + "\n" + "\n".join(continuation_lines)
                 i = j - 1
 
-            if key == "内容" and current_chapter is not None and current_level is None:
+            if key == "内容" and current_chapter is None:
+                meta["subtitle"] = value
+            elif key == "内容" and current_chapter is not None and current_level is None and not current_chapter["intro"] and len(current_chapter["levels"]) == 0:
                 current_chapter["intro"] = value
+            elif key == "内容" and current_chapter is not None and len(current_chapter["levels"]) > 0:
+                # Standalone content block between chapters.
+                sections.append({"type": "interlude", "text": value})
             else:
                 key_map = {
                     "游戏名": "game_name",
@@ -108,7 +115,7 @@ def parse_content_file(raw_text: str):
         current_level["general_notes"].append(line)
         i += 1
 
-    return meta, chapters
+    return meta, chapters, sections
 
 
 def html_with_breaks(text: str) -> str:
@@ -222,8 +229,21 @@ def render_chapter(chapter: dict, gif_index: dict) -> str:
         </details>"""
 
 
-def build_html(meta: dict, chapters, gif_index: dict, stylesheet_href: str, back_href: str) -> str:
-    chapter_blocks = "\n".join(render_chapter(chapter, gif_index) for chapter in chapters)
+def render_interlude(text: str) -> str:
+    return f"""
+        <section class=\"interlude-box\">
+          <p class=\"interlude-text\">{html_with_breaks(text)}</p>
+        </section>"""
+
+
+def build_html(meta: dict, sections, gif_index: dict, stylesheet_href: str, back_href: str) -> str:
+    rendered_sections = []
+    for item in sections:
+        if item["type"] == "chapter":
+            rendered_sections.append(render_chapter(item["chapter"], gif_index))
+        elif item["type"] == "interlude":
+            rendered_sections.append(render_interlude(item["text"]))
+    chapter_blocks = "\n".join(rendered_sections)
     safe_game_name = html.escape(meta["game_name"])
     safe_tab_title = html.escape(meta["tab_title"])
     safe_page_title = html.escape(meta["page_title"])
@@ -268,7 +288,7 @@ def main():
         raise FileNotFoundError(f"未找到输入文件: {input_path}")
 
     raw = input_path.read_text(encoding="utf-8")
-    meta, chapters = parse_content_file(raw)
+    meta, chapters, sections = parse_content_file(raw)
     gif_index = build_gif_index(base_dir / "gif")
 
     missing_meta = [key for key, value in meta.items() if not value]
@@ -289,7 +309,7 @@ def main():
         raise ValueError("存在没有关卡名的章节，请检查 content.txt 中每章的关卡列表。")
 
     stylesheet_href = os.path.relpath(stylesheet_path, output_path.parent)
-    output_path.write_text(build_html(meta, chapters, gif_index, stylesheet_href, back_href), encoding="utf-8")
+    output_path.write_text(build_html(meta, sections, gif_index, stylesheet_href, back_href), encoding="utf-8")
     print(f"已生成: {output_path}")
 
 
