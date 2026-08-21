@@ -111,7 +111,7 @@ def main() -> None:
     parser.add_argument("--pages-dir", default="pages", help="Generated article pages directory.")
     parser.add_argument("--output", default="index.html", help="Output index html file.")
     parser.add_argument("--stylesheet", default="../../../static/css/misc.css", help="Stylesheet path used by index.html.")
-    parser.add_argument("--back-href", default="../../index.html", help="Back button target URL.")
+    parser.add_argument("--back-href", default="../../", help="Back button target URL.")
     parser.add_argument("--content-file", default="content.txt", help="Meta file for index title and quote.")
     parser.add_argument("--title", default="OI Articles", help="Index page title and H1 text.")
     parser.add_argument("--quote", default="", help="Index quote text. If empty, read from content file.")

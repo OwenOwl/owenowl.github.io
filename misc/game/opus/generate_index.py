@@ -282,7 +282,7 @@ def main():
     input_path = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else base_dir / "content.txt"
     output_path = Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else base_dir / "index.html"
     stylesheet_path = Path(sys.argv[3]).resolve() if len(sys.argv) > 3 else (base_dir / "../../../static/css/misc.css").resolve()
-    back_href = sys.argv[4] if len(sys.argv) > 4 else "../../index.html"
+    back_href = sys.argv[4] if len(sys.argv) > 4 else "../../"
 
     if not input_path.exists():
         raise FileNotFoundError(f"未找到输入文件: {input_path}")

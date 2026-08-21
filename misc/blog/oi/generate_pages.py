@@ -63,7 +63,7 @@ def generate_pages(base_dir: Path, list_file: Path, src_dir: Path, output_dir: P
     filenames = [line.strip() for line in list_file.read_text(encoding="utf-8").splitlines() if line.strip()]
     output_dir.mkdir(parents=True, exist_ok=True)
     stylesheet_path = stylesheet.resolve()
-    index_path = (base_dir / "index.html").resolve()
+    index_dir = base_dir.resolve()
 
     written_files: list[Path] = []
     for filename in filenames:
@@ -74,7 +74,7 @@ def generate_pages(base_dir: Path, list_file: Path, src_dir: Path, output_dir: P
         title, body = render_markdown(source_path.read_text(encoding="utf-8"))
         output_path = output_dir / f"{source_path.stem}.html"
         stylesheet_href = os.path.relpath(stylesheet_path, output_path.parent)
-        back_href = os.path.relpath(index_path, output_path.parent)
+        back_href = os.path.relpath(index_dir, output_path.parent).rstrip("/") + "/"
         output_path.write_text(build_page(title, body, stylesheet_href, back_href), encoding="utf-8")
         written_files.append(output_path)
 

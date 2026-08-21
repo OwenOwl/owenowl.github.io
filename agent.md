@@ -39,7 +39,7 @@ Root styling/scripts:
 Misc hub (`misc/index.html`):
 
 - Chinese-language page titled `Miscellaneous`.
-- Links to `./game/opus/index.html`, `./blog/oi/index.html`, and `./gallery/index.html`.
+- Links to `./game/opus/`, `./blog/oi/`, and `./gallery/`.
 - Has three placeholder cards with empty titles and `href="#"`.
 - Inline styles rely on variables from `../static/css/misc.css`.
 
