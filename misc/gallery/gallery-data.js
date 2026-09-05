@@ -5,8 +5,8 @@ window.GALLERY_DATA = [
     "date": "2026-08-23",
     "dateDisplay": "2026-08-23",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "好听，Toby Fox 神了。前面好惊艳，但到后面最经典的那几首倒是交响味道不太浓，有点尊重原著了。镁塔顿这…",
+    "contentHtml": "<p>好听，Toby Fox 神了。前面好惊艳，但到后面最经典的那几首倒是交响味道不太浓，有点尊重原著了。镁塔顿这首怎么管乐声音没了啊！</p>",
     "image": "./src/2026-08-23-undertale/1.jpg"
   },
   {
@@ -14,8 +14,8 @@ window.GALLERY_DATA = [
     "date": "2026-08-14",
     "dateDisplay": "2026-08-14",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "纯时间地点合适就来看了，听过的歌当然还是好听的，UNDEAD 好！不过竟然各场之间都没有差分。现场活动气氛好…",
+    "contentHtml": "<p>纯时间地点合适就来看了，听过的歌当然还是好听的，UNDEAD 好！不过竟然各场之间都没有差分。现场活动气氛好低，果然太地上了。</p>",
     "image": "./src/2026-08-14-yoasobi/1.jpg"
   },
   {
@@ -68,8 +68,8 @@ window.GALLERY_DATA = [
     "date": "2026-03-29",
     "dateDisplay": "2026-03-29",
     "category": "Baseball",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "纽约吃喝看球。赛季开始就在艰难蠕动的大都会，最后还是被海盗带走了。Lowe 好强啊，海盗捡到宝了。",
+    "contentHtml": "<p>纽约吃喝看球。赛季开始就在艰难蠕动的大都会，最后还是被海盗带走了。Lowe 好强啊，海盗捡到宝了。</p>",
     "image": "./src/2026-03-29-mets/1.jpg"
   },
   {
@@ -95,8 +95,8 @@ window.GALLERY_DATA = [
     "date": "2025-08-01",
     "dateDisplay": "2025-08-01",
     "category": "Baseball",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "从芝加哥回来想着没事就顺路看的。坐在我旁边的小年轻感觉磕大了使劲拉我讲话，还问我支持哪边，那我确实是不支持太…",
+    "contentHtml": "<p>从芝加哥回来想着没事就顺路看的。坐在我旁边的小年轻感觉磕大了使劲拉我讲话，还问我支持哪边，那我确实是不支持太空人的。最后红袜延长局打出再见了，燃翻了，小哥还把他红袜帽子送我了。</p>",
     "image": "./src/2025-08-01-red-sox/1.jpg"
   },
   {
@@ -113,8 +113,8 @@ window.GALLERY_DATA = [
     "date": "2025-05-28",
     "dateDisplay": "2025-05-28",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "回国趁机看一看 Hitorie 新专在中国的巡演，真的是又爽又好听呀。而且最后还有签名和说话环节，尝试说四川…",
+    "contentHtml": "<p>回国趁机看一看 Hitorie 新专在中国的巡演，真的是又爽又好听呀。而且最后还有签名和说话环节，尝试说四川话的样子好可爱，拿到签名爽。对谈偷听居然发现排队在我前面的人也是从美东飞回来看的，好巧。</p>",
     "image": "./src/2025-05-28-hitorie/1.jpg"
   },
   {
@@ -122,8 +122,8 @@ window.GALLERY_DATA = [
     "date": "2025-04-04",
     "dateDisplay": "2025-04-04 — 2025-04-05",
     "category": "Baseball",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "两天比赛，山本小爆打线也不支持，最后输掉了，结果反而后面朗希这场发挥了，拿下了胜利。",
+    "contentHtml": "<p>两天比赛，山本小爆打线也不支持，最后输掉了，结果反而后面朗希这场发挥了，拿下了胜利。</p>",
     "image": "./src/2025-04-04-phillies/1.jpg"
   },
   {
@@ -131,8 +131,8 @@ window.GALLERY_DATA = [
     "date": "2025-03-30",
     "dateDisplay": "2025-03-30",
     "category": "Baseball",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "看完邓紫棋顺带看的一场球赛。开季酿酒人被洋基爆了啊，山顶便宜票看了一场 12 分的狂轰，赚了。",
+    "contentHtml": "<p>看完邓紫棋顺带看的一场球赛。开季酿酒人被洋基爆了啊，山顶便宜票看了一场 12 分的狂轰，赚了。</p>",
     "image": "./src/2025-03-30-yankees/1.jpg"
   },
   {
@@ -140,8 +140,8 @@ window.GALLERY_DATA = [
     "date": "2025-03-29",
     "dateDisplay": "2025-03-29",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "跟工友一块去看的，经典果然好听。",
+    "contentHtml": "<p>跟工友一块去看的，经典果然好听。</p>",
     "image": "./src/2025-03-29-gloria/1.jpg"
   },
   {
@@ -167,8 +167,8 @@ window.GALLERY_DATA = [
     "date": "2024-08-04",
     "dateDisplay": "2024-08-04",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "再战 anikura，学马好火呀。",
+    "contentHtml": "<p>再战 anikura，学马好火呀。</p>",
     "image": "./src/2024-08-04-aniclover/1.jpg"
   },
   {
@@ -185,8 +185,8 @@ window.GALLERY_DATA = [
     "date": "2024-06-28",
     "dateDisplay": "2024-06-28",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "毕业前一天，穿学士服去瞎搞了。",
+    "contentHtml": "<p>毕业前一天，穿学士服去瞎搞了。</p>",
     "image": "./src/2024-06-28-asuno/1.jpg"
   },
   {
@@ -194,8 +194,8 @@ window.GALLERY_DATA = [
     "date": "2024-05-03",
     "dateDisplay": "2024-05-03",
     "category": "HIMEHINA",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "hh 要参加上海的拼盘，于是专程过来看了。选曲是经典三样但是好燃！酒姬超级多，感觉得占了场里一半。而且肯定不…",
+    "contentHtml": "<p>hh 要参加上海的拼盘，于是专程过来看了。选曲是经典三样但是好燃！酒姬超级多，感觉得占了场里一半。而且肯定不是录播，因为现场酒姬喊了一个位置怪怪的 call，后面 hina 居然也类似地喊了。</p>",
     "image": "./src/2024-05-03-virtual-super-live/1.jpg"
   },
   {
@@ -212,8 +212,8 @@ window.GALLERY_DATA = [
     "date": "2023-08-11",
     "dateDisplay": "2023-08-11",
     "category": "Live",
-    "excerpt": "很酷。氛围非常不错。后面这场水平有些参差不齐，但术力口比较多那个区技术力挺好。 有时候就觉得国内管人吃的氛围…",
-    "contentHtml": "<p>很酷。氛围非常不错。后面这场水平有些参差不齐，但术力口比较多那个区技术力挺好。</p>\n<p>有时候就觉得国内管人吃的氛围确实比较拉了。可能上网吵架也是一种方式吧。</p>",
+    "excerpt": "前面雷神 V 特很酷。氛围非常不错。后面这场水平有些参差不齐，但术力口比较多那个区技术力挺好。",
+    "contentHtml": "<p>前面雷神 V 特很酷。氛围非常不错。后面这场水平有些参差不齐，但术力口比较多那个区技术力挺好。</p>",
     "image": "./src/2023-08-11-aniclover/1.jpg"
   },
   {
@@ -222,7 +222,7 @@ window.GALLERY_DATA = [
     "dateDisplay": "2023-08-06",
     "category": "Live",
     "excerpt": "参演的偶像团体基本不认识，因此主要过去凑凑热闹感受一下氛围了。有的 stage 似乎的确动画名场景。推子的活…",
-    "contentHtml": "<p>参演的偶像团体基本不认识，因此主要过去凑凑热闹感受一下氛围了。有的 stage 似乎的确动画名场景。推子的活动不在今天。<br>感受到了日本御宅的强大，看他们喊 Mix 也非常好玩。<br>后来白キャン出演到一半突然下暴雨了，越到演出高潮还越下越大，简直可以成为历史名场面的程度。紧急避难给后面爱马仕的团的演出夹没了。</p>\n<p>还想去豊洲 PIT 圣地巡礼的，结果准备工作不太充分，到了发现 GOLDEN 很多场景不在豊洲，很是失败。有机会再去。</p>",
+    "contentHtml": "<p>参演的偶像团体基本不认识，因此主要过去凑凑热闹感受一下氛围了。有的 stage 似乎的确动画名场景。推子的活动不在今天。</p>\n<p>感受到了日本御宅的强大，看他们喊 Mix 也非常好玩。</p>\n<p>后来白キャン出演到一半突然下暴雨了，越到演出高潮还越下越大，简直可以成为历史名场面的程度。紧急避难给后面爱马仕的团的演出夹没了。</p>\n<p>还想去豊洲 PIT 圣地巡礼的，结果准备工作不太充分，到了发现 GOLDEN 很多场景不在豊洲，很是失败。有机会再去。</p>",
     "image": "./src/2023-08-06-tif/1.jpg"
   },
   {
@@ -239,8 +239,8 @@ window.GALLERY_DATA = [
     "date": "2023-06-17",
     "dateDisplay": "2023-06-17",
     "category": "Live",
-    "excerpt": "",
-    "contentHtml": "",
+    "excerpt": "拼盘，大部分出演还都是以 l2d 直播分屏的形式来唱的，其实感觉观感不太好。而且大家全坐。最后下来认识了 I…",
+    "contentHtml": "<p>拼盘，大部分出演还都是以 l2d 直播分屏的形式来唱的，其实感觉观感不太好。而且大家全坐。最后下来认识了 IronMouse。</p>",
     "image": "./src/2023-06-17-offkai/1.jpg"
   }
 ];
