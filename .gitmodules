@@ -4,3 +4,6 @@
 [submodule "cams"]
 	path = cams
 	url = git@github.com:cams-hoi/cams-hoi.github.io.git
+[submodule "spot"]
+	path = spot
+	url = git@github.com:OwenOwl/spot-projectpage.git
