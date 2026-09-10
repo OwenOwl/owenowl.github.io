@@ -1,3 +1,6 @@
 [submodule "extremcontrol"]
 	path = extremcontrol
 	url = https://github.com/ziyanx02/extremcontrol.git
+[submodule "cams"]
+	path = cams
+	url = git@github.com:cams-hoi/cams-hoi.github.io.git
